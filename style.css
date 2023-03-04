@@ -1,11 +1,11 @@
 .natt
 {
-    background-image: url("bilder/bakgrunn.png");
+    background-image: url("bakgrunn.png");
     font-family:'Times New Roman', Times, serif;
 }
 .dag
 {
-    background-image: url("bilder/himmel.avif");
+    background-image: url("himmel.avif");
     font-family:'Times New Roman', Times, serif;
 }
 h1
