@@ -3,20 +3,40 @@
 <head>
     <title>Nettside</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <link rel="icon" type="images/x-icon" href="https://www.w3docs.com/favicon.ico" />
 </head>
 <body class="natt">
 
-<div class="topnav">
-    <a class="active" href="index.html">Hjem</a>
-    <a href="musikk copy.html">Dag/Natt</a>
-    <a href="ommeg.html">Om meg</a>
-    <a href="musikk.html">Musikk</a>
-    <a href="venner.html">Mine venner</a>
+  <div class="topnav">
+    <a id="siteHome" class = "home" class="active" href="index.html">Hjem</a>
+    <a id="siteDayNight" class = "daynight" href="musikk copy.html">Dag/Natt</a>
+    <a id="siteAboutMe" class = "aboutme" href="ommeg.html">Om meg</a>
+    <a id="siteMusic" class = "music" href="musikk.html">Musikk</a>
+    <div class="dropdown">
+      <button id="siteFriends" class="dropbtn">Mine venner 
+
+      </button>
+      <div class="dropdown-content">
+      <a href="astrid.html">Astrid</a>
+      <a href="oliva.html">Oliva</a>
+      <a href="elvira.html">Elvira</a>
+      </div>
+    </div>
+    <div class="språk">
+        <button onclick="changeLanguage('en')">
+          English</button>
+      
+        <button onclick="changeLanguage('no')">
+          Norsk</button>
+        
+        
+        </div>
+    
 </div>
-<h1>Musikk</h1>
+<h1 id="siteTitle" class="title">Musikk</h1>
 <div class ="bilde">
-<h3>Jeg spiller klarinett, piano og cello. <br>
+<h3 id="siteContent" class="welcome">Jeg spiller klarinett, piano og cello. <br>
     Jeg elsker å spille musikk og syns det er veldig gøy.
     
 </h3>
@@ -33,8 +53,72 @@
 </div>
 </div>
 <div class="container">
-<p class="klarinetttekst">Denne videoen lagde jeg sammen <br>med klarinettlæreren min i 2020</p>
-<p class="pianotekst">Denne videoen er et 'piano cover' <br> av Phantom of the Opera</p>
+<p id="bildetekst"class="klarinetttekst">Denne videoen lagde jeg sammen <br>med klarinettlæreren min i 2020</p>
+<p id="bildetekst2"class="pianotekst">Denne videoen er et 'piano cover' <br> av Phantom of the Opera</p>
 </div>
+<script>
+    
+    function changeLanguage(lang) {
+      location.hash = lang;
+      location.reload();
+    }
+
+    
+    var language = {
+      no: {
+    
+        title: "Musikk",
+        welcome: "Jeg spiller klarinett, piano og cello. Jeg elsker å spille musikk og syns det er veldig gøy.",
+        home: "Hjem",
+        daynight: "Dag/Natt",
+        aboutme: "Om meg",
+        music: "Musikk",
+        friends: "Mine venner"
+      },
+      en: {
+        bildetekst: "",
+        bildetekst2:"",
+        title: "Music",
+        welcome: "I play clarinet, piano and cello. I love playing music and I think it is very fun.",
+        home: "Home",
+        daynight: "Day/Night",
+        aboutme: "About me",
+        music: "Music",
+        friends: "My friends"
+      }
+      
+    };
+    
+    
+  
+    
+    if (window.location.hash == "#en") {
+        siteContent.textContent =
+        language.en.welcome;
+        siteTitle.textContent =
+        language.en.title;
+        bildetekst.textContent =
+        language.en.klarinetttekst;
+        bildetekst2.textContent =
+        language.en.pianotekst;
+        siteHome.textContent =
+        language.en.home;
+
+        siteDayNight.textContent =
+        language.en.daynight;
+
+        siteAboutMe.textContent =
+        language.en.aboutme;
+
+        siteMusic.textContent =
+        language.en.music;
+
+        siteFriends.textContent =
+        language.en.friends;
+
+    }
+    
+    
+</script>
 </body>
 
