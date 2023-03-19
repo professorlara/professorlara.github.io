@@ -4,6 +4,7 @@
     <title>Nettside</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="images/x-icon" href="https://www.w3docs.com/favicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body class="natt">
 
@@ -13,9 +14,18 @@
     <a href="ommeg.html">Om meg</a>
     <a href="musikk.html">Musikk</a>
     <a href="venner.html">Mine venner</a>
+    <div class="språk">
+        <button onclick="changeLanguage('en')">
+          English</button>
+      
+        <button onclick="changeLanguage('no')">
+          Norsk</button>
+        
+        
+        </div>
 </div>
-<h1>Mine venner</h1>
-<h3>Jeg har blitt kjent med veldig mange folk i klassen det siste halvåret. Her er noen av dem og litt informasjon om dem:</h3>
+<h1 id="siteTitle" class="title">Mine venner</h1>
+<h3 id="siteContent" class="welcome">Jeg har blitt kjent med veldig mange folk i klassen det siste halvåret. Her er noen av dem og litt informasjon om dem:</h3>
 <br>
 <div class="planeter">
     <ul>
@@ -26,3 +36,38 @@
     </div>
 
 <br>
+<script>
+    
+    function changeLanguage(lang) {
+      location.hash = lang;
+      location.reload();
+    }
+
+    
+    var language = {
+      no: {
+        title: "Mine venner",
+        welcome: "Jeg har blitt kjent med veldig mange folk i klassen det siste halvåret. Her er noen av dem og litt informasjon om dem:"
+      },
+      en: {
+        title: "My friends",
+        welcome: "The past year I have got to know lots of nice people in my class. Here are some of them, and a bit of information about each of them:"
+      }
+      
+    };
+    
+    
+  
+    
+    if (window.location.hash == "#en") {
+        siteContent.textContent =
+        language.en.welcome;
+        siteTitle.textContent =
+        language.en.title;
+    }
+    
+    
+</script>
+</body>
+</html>
+
