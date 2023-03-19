@@ -13,7 +13,7 @@ h1
     color: rgb(10, 156, 246);
     text-align: center;
     font-size: 40px;
-    margin-top: 50px;
+    margin-top: 5%;
 }
 h2
 {
@@ -66,11 +66,22 @@ a:hover
     color:rgb(255, 255, 255);
     text-decoration: solid;
 }
+.title
+{
+    margin-top: 5%;
+}
 .topnav
 {
     overflow: hidden;
     background-color: rgb(10, 156, 246);
     font-size: medium;
+    
+    
+    top:0;
+    right:0;
+    width: 100%; 
+
+    
 }
 
 .topnav a {
@@ -80,10 +91,58 @@ a:hover
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+
+    float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
   }
-  .topnav a:hover {
+  .topnav a:hover, .navbar a:hover, .dropdown:hover .dropbtn 
+    
+   {
     background-color: #ddd;
     color: black;
+  }
+
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
   }
   li{
     list-style-type:" ";
@@ -147,12 +206,12 @@ h3
 }
 .klarinetttekst
 {
-    padding-left:300px;
+    padding-left:25%;
     color:white;
 }
 .pianotekst
 {
-    padding-left: 80px;
+    padding-left: 4%;
     color:white;
 }
 
@@ -160,11 +219,20 @@ h3
 .klarinetttekstblå
 {
     color:rgb(10, 156, 246);
-    padding-left:300px;
+    padding-left:25%;
 }
 .pianotekstblå
 {
     color:rgb(10, 156, 246);
-    padding-left:80px;
+    padding-left:4%;
+}
+.språk
+{
+    margin-left:88%;
+    margin-top:1%;
+}
+.blå-tekst
+{
+    color:rgb(10, 156, 246);
 }
 
