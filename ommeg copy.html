@@ -4,28 +4,124 @@
     <title>Nettside</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="images/x-icon" href="https://www.w3docs.com/favicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body class="dag">
 
-<div class="topnav">
-    <a class="active" href="index copy.html">Hjem</a>
-    <a href="ommeg.html">Dag/Natt</a>
-    <a href="ommeg copy.html">Om meg</a>
-    <a href="musikk copy.html">Musikk</a>
-    <a href="venner copy.html">Mine venner</a>
-</div>
-<h1>Om meg</h1>
+  <div class="topnav">
+    <a id="siteHome" class = "home" class="active" href="index copy.html">Hjem</a>
+    <a id="siteDayNight" class = "daynight" href="ommeg.html">Dag/Natt</a>
+    <a id="siteAboutMe" class = "aboutme" href="ommeg copy.html">Om meg</a>
+    <a id="siteMusic" class = "music" href="musikk copy.html">Musikk</a>
+    <div class="dropdown">
+      <button id="siteFriends" class="dropbtn">Mine venner 
 
-<h3 class="info">Her er 5 fakta om meg selv:</h3>
+      </button>
+      <div class="dropdown-content">
+      <a href="astrid copy.html">Astrid</a>
+      <a href="oliva copy.html">Oliva</a>
+      <a href="elvira copy.html">Elvira</a>
+      </div>
+    </div>
+    <div class="språk">
+        <button onclick="changeLanguage('en')">
+          English</button>
+      
+        <button onclick="changeLanguage('no')">
+          Norsk</button>
+        
+        
+        </div>
+    
+</div>
+<h1 id="siteTitle" class="title">Om meg</h1>
+
+<h3 id="siteContent" class="info">Her er 5 fakta om meg selv:</h3>
 <div class="tekstboks">
 <h3><ul>
-    <li>Jeg heter Lara og går på Sommerlyst skole i 8V5V6.</li>
-    <li>Favorittfaget mitt er matte (og programmering!)</li>
-    <li>Jeg liker å spille musikk, og jeg kan løse en Rubik's kube på 35 sekunder.</li>
-    <li>Jeg gikk på <u><a href="https://prestvannet.tromsoskolen.no/">Prestvannet skole</a></u> før, men jeg har også gått på skole i USA.</li>
+    <li id="one" class="n1">Jeg heter Lara og går på Sommerlyst skole i 8V5V6.</li>
+    <li id="two" class="n2">Favorittfaget mitt er matte (og programmering!)</li>
+    <li id="three" class="n3">Jeg liker å spille musikk, og jeg kan løse en Rubik's kube på 35 sekunder.</li>
+    <li id="four" class="n4">Jeg gikk på <u><a href="https://prestvannet.tromsoskolen.no/">Prestvannet skole</a></u> før, men jeg har også gått på skole i USA.</li>
     
 </ul></h3>  
     
 </div>
 
 <br>
+<script>
+    
+    function changeLanguage(lang) {
+      location.hash = lang;
+      location.reload();
+    }
+
+    
+    var language = {
+      no: {
+        title: "Om meg",
+        info: "Her er 5 fakta om meg selv:",
+        home: "Hjem",
+        daynight: "Dag/Natt",
+        aboutme: "Om meg",
+        music: "Musikk",
+        friends: "Mine venner"
+      },
+      en: {
+        title: "About me",
+        info: "Here are 5 facts about myself:",
+        n1:"My name is Lara and I go to Sommerlyst school in class 8V5V6",
+        n2:"My favourite subject is maths (and programming of course!)",
+        n3:"I like to play music, and I can solve a Rubik's cube in 35 seconds",
+        n4:"I went to Prestvannet school before, but I have also gone to school in the US",
+        home: "Home",
+        daynight: "Day/Night",
+        aboutme: "About me",
+        music: "Music",
+        friends: "My friends"
+
+        
+      }
+      
+    };
+    
+    
+  
+    
+    if (window.location.hash == "#en") {
+        siteContent.textContent =
+        language.en.info;
+        siteTitle.textContent =
+        language.en.title;
+        one.textContent
+        = language.en.n1;
+        two.textContent
+        = language.en.n2;
+        three.textContent
+        = language.en.n3;
+        four.textContent=
+        language.en.n4;
+        siteHome.textContent =
+        language.en.home;
+
+        siteDayNight.textContent =
+        language.en.daynight;
+
+        siteAboutMe.textContent =
+        language.en.aboutme;
+
+        siteMusic.textContent =
+        language.en.music;
+
+        siteFriends.textContent =
+        language.en.friends;
+
+
+
+    }
+    
+    
+</script>
+</body>
+</html>
+
