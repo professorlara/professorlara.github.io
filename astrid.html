@@ -4,20 +4,100 @@
     <title>Nettside</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="images/x-icon" href="https://www.w3docs.com/favicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body class="natt">
 
-<div class="topnav">
-    <a class="active" href="index.html">Hjem</a>
-    <a href="astrid copy.html">Dag/Natt</a>
-    <a href="ommeg.html">Om meg</a>
-    <a href="musikk.html">Musikk</a>
-    <a href="venner.html">Mine venner</a>
+  <div class="topnav">
+    <a id="siteHome" class = "home" class="active" href="index.html">Hjem</a>
+    <a id="siteDayNight" class = "daynight" href="astrid copy.html">Dag/Natt</a>
+    <a id="siteAboutMe" class = "aboutme" href="ommeg.html">Om meg</a>
+    <a id="siteMusic" class = "music" href="musikk.html">Musikk</a>
+    <div class="dropdown">
+      <button id="siteFriends" class="dropbtn">Mine venner 
+
+      </button>
+      <div class="dropdown-content">
+      <a href="astrid.html">Astrid</a>
+      <a href="oliva.html">Oliva</a>
+      <a href="elvira.html">Elvira</a>
+      </div>
+    </div>
+    <div class="språk">
+        <button onclick="changeLanguage('en')">
+          English</button>
+      
+        <button onclick="changeLanguage('no')">
+          Norsk</button>
+        
+        
+        </div>
+    
 </div>
-<h1>Astrid Krefting</h1>
+<h1 id="siteTitle" class="title">Astrid Krefting</h1>
 <div class ="bilde">
-<h3>Dette er Astrid. Hun er veldig snill og morsom, og hun liker å tegne.</h3>
+<h3 id="siteContent" class="welcome">Dette er Astrid. Hun er veldig snill og morsom, og hun liker å tegne.</h3>
 <img src="astrid.jpg" alt="bilde av Astrid" width="500px">
 </div>
 
 <br>
+
+<script>
+    
+    function changeLanguage(lang) {
+      location.hash = lang;
+      location.reload();
+    }
+
+    
+    var language = {
+      no: {
+        title: "Astrid Krefting",
+        welcome: "Dette er Astrid. Hun er veldig snill og morsom, og hun liker å tegne.",
+        home: "Hjem",
+        daynight: "Dag/Natt",
+        aboutme: "Om meg",
+        music: "Musikk",
+        friends: "Mine venner"
+      },
+      en: {
+        title: "Astrid Krefting",
+        welcome: "This is Astrid. She is very kind and funny, and likes to draw.",
+        home: "Home",
+        daynight: "Day/Night",
+        aboutme: "About me",
+        music: "Music",
+        friends: "My friends"
+      }
+      
+    };
+    
+    
+  
+    
+    if (window.location.hash == "#en") {
+        siteContent.textContent =
+        language.en.welcome;
+        siteTitle.textContent =
+        language.en.title;
+        siteHome.textContent =
+        language.en.home;
+
+        siteDayNight.textContent =
+        language.en.daynight;
+
+        siteAboutMe.textContent =
+        language.en.aboutme;
+
+        siteMusic.textContent =
+        language.en.music;
+
+        siteFriends.textContent =
+        language.en.friends;
+    }
+    
+    
+</script>
+
+</body>
+</html>
