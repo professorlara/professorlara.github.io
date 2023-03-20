@@ -3,25 +3,17 @@
 <head>
     <title>Nettside</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <link rel="icon" type="images/x-icon" href="https://www.w3docs.com/favicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body class="dag">
-    <div class="topnav">
-        <a id="siteHome" class = "home" class="active" href="index copy.html">Hjem</a>
-        <a id="siteDayNight" class = "daynight" href="index.html">Dag/Natt</a>
-        <a id="siteAboutMe" class = "aboutme" href="ommeg copy.html">Om meg</a>
-        <a id="siteMusic" class = "music" href="musikk copy.html">Musikk</a>
-        <div class="dropdown">
-          <button id="siteFriends" class="dropbtn">Mine venner 
-    
-          </button>
-          <div class="dropdown-content">
-          <a href="astrid copy.html">Astrid</a>
-          <a href="oliva copy.html">Oliva</a>
-          <a href="elvira copy.html">Elvira</a>
-          </div>
-        </div>
+
+<div class="topnav">
+        <a class="active" href="index copy.html">Hjem</a>
+        <a href="index.html">Dag/Natt</a>
+        <a href="ommeg copy.html">Om meg</a>
+        <a href="musikk copy.html">Musikk</a>
+        <a href="venner copy.html">Mine venner</a>
         <div class="språk">
             <button onclick="changeLanguage('en')">
               English</button>
@@ -32,23 +24,45 @@
             
             </div>
         
-    </div>
-    
-<h1>Lara Elvevåg</h1>
+</div>
+<h1 id="siteTitle" class="title">Lara Elvevåg</h1>
 
-<h3 class="info">Hei! Jeg heter Lara og går i 8V5V6.
+<h3 id="siteContent" class="welcome">Hei! Jeg heter Lara og går i 8V5V6.
     Velkommen til nettsiden min!
 </h3>
 <br>
 <img src="lara.jpg" alt="bilde av Lara" width="400" class="center">
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<script>
+    
+    function changeLanguage(lang) {
+      location.hash = lang;
+      location.reload();
+    }
+
+    
+    var language = {
+      no: {
+        title: "Lara Elvevåg",
+        welcome: "Hei! Jeg heter Lara og går i 8V5V6. Velkommen til nettsiden min!"
+      },
+      en: {
+        title: "Lara Elvevåg",
+        welcome: "Hi! My name is Lara and I go to Sommerlyst school in class 8V5V6. Welcome to my website!"
+      }
+      
+    };
+    
+    
+  
+    
+    if (window.location.hash == "#en") {
+        siteContent.textContent =
+        language.en.welcome;
+        siteTitle.textContent =
+        language.en.title;
+    }
+    </script>
 </body>
+</html>
 
 
